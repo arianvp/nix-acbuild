@@ -1,9 +1,19 @@
 # nix-acbuild
-Build minimal ACI containers using the Nix package manager
+Build minimal ACI containers for [rkt](https://github.com/rkt/rkt) using the Nix package manager
+
+
+`nix-acbuild` calculates the minimal closure to run your provided `appc` manifest, and then
+packs it up into an `appc` container, which can then be run using `rkt` for example.
 
 
 ## Tutorial
 .. to be written
+
+
+## Requirements
+A  machine with nix installed to build the images
+
+A machine with rkt installed (could be the same) to run the ACI that gets output
 
 ## Example
 
