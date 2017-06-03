@@ -19,6 +19,8 @@ A machine with rkt installed (could be the same) to run the ACI that gets output
 
 ```
 $ nix-build ./examples/nginx.nix
+$ du -h result/image.aci
+17M	result/image.aci
 $ systemd-run rkt run --insecure-options=image $PWD/result/image.aci
 $ machinectl
 MACHINE                                  CLASS     SERVICE OS VERSION ADDRESSES
