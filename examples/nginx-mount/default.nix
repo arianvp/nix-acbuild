@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, acbuildTool ? import ./../acbuild.nix {}}:
+{ pkgs ? import <nixpkgs> {}, acbuildTool ? import ./../../acbuild.nix {}}:
 let
   nginxPort = 80;
   nginxConf = pkgs.writeText "nginx.conf" ''

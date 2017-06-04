@@ -34,7 +34,7 @@ Now go to `http://172.16.28.16` and great success!
 ### Example Nginx with mounts
 
 ```
-$ systemd-run rkt run --insecure-options=image --volume website,kind=host,source=$PWD/examples $(nix-build ./examples/nginx.nix)
+systemd-run rkt run --insecure-options=image --volume website,kind=host,source=$PWD/examples/nginx-mount $(nix-build ./examples/nginx-mount) 
 ```
 
 Look up the IP
