@@ -23,12 +23,11 @@ with pkgs;
       runCommand "acbuild" {
         buildInputs = [ acbuild ];
         closure = pkgs.writeReferencesToFile manifestFile;
-        name = baseName;
+        name = "${baseName}.aci";
         storeDir = builtins.storeDir;
         inherit manifestFile;
       }
       ''
-      mkdir $out
       acbuild --debug begin
       acbuildEnd() {
         export EXIT=$?
@@ -51,7 +50,7 @@ with pkgs;
       acbuild --debug copy ".$storeDir" "$storeDir"
       acbuild --debug copy etc  /etc
       acbuild --debug replace-manifest $manifestFile
-      acbuild --debug write $out/image.aci
+      acbuild --debug write $out
       ''
   ;
 }
